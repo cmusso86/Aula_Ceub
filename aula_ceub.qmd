@@ -1,0 +1,212 @@
+---
+title: "Introdução ao Processamento de Linguagem Natural"
+author: "Carolina Musso"
+subtitle: "Processo Seletivo: Docente Pós-graduação CDML "
+institute: "Ceub"
+format:
+  revealjs:
+    incremental: true 
+    theme: dark
+    code-block-border-left: "#31BAE9"
+    code-block-bg: "#011627"
+    code-overflow: wrap
+    highlight-style: dracula
+    transition: fade
+    self-contained: true
+knitr:
+  opts_chunk:
+    echo: true
+    warnings: false
+editor: visual
+---
+
+## Estrutura da aula
+
+-   Objetivo
+-   Materiais utilizados
+-   Introdução teórica
+-   Regex
+
+## Objetivo
+
+-   Introduzir os principais conceitos de PLN para iniciar o desenvolver habilidades e competências para trabalhar com dados de texto não estruturados.
+
+-   Entender a importância e áreas de aplicação do PLN.
+
+-   Entender o uso de Expressões Regulares e iniciar análises simples dentro desse tema.
+
+## Materiais
+
+-   Bibliografia básica
+
+    -   [Introdução à Análise Textual aplicada à Sociologia](https://soaresalisson.github.io/analisetextual/)
+    -   [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/2.pdf)
+
+-   R + RStudio
+
+    -   [Instalação](https://posit.co/download/rstudio-desktop/)
+    -   pacotes [stringr](https://stringr.tidyverse.org)
+    -   [cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_strings.pdf)
+
+## Introdução
+
+### PLN: Uma área da **mineração de texto**.
+
+-   Interdiciplinar: linguística, ciência da computação e inteligência artificial de modo a intermediar a interação humano-computador
+-   Técnica de IA para compreender dados não estruturdos
+-   Dá suporte para mineração de dados
+-   Alto valor comercial e social: mais oportuno
+
+## Introdução
+
+-   Mineração de **dados** lida com dados estruturados - dados altamente formatados, como em bancos de dados.
+-   A mineração de **texto** lida também com dados textuais não estruturados - texto que não é predefinido ou organizado de nenhuma forma, como em feeds de mídia social.
+-   **Historicamente:** Igreja católica no déculo XVII. Formalmente 1980. Mais técnicas sendo desenvolvidas até hoje.
+-   Formatos **semi-estruturados:** Markdown, LateX, YAML, BibTex
+
+## Métodos, técnicas e áreas
+
+**De modo geral:** Extração, Recuperação de Informação, Categorização e Clustering, Visualização...
+
+-   Detecção de Spam, PoS-Tagging, Reconhecimento de Entidade, Tesaurus, Tokenização
+
+-   Desambiguação, Parse Semântico, Análise de Sentimentos, Modelagem de Tópicos
+
+-   Geração de Texto, Sumarização Automática, Resposta a perguntas, Interfaces conversaciones, Redes Neurais
+
+## Exemplos
+
+### Filósofos da ciência na Sociologia
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2020.38.31.png){fig-align="center" width="461"}
+
+[Popper's Situational Analysis and Contemporary Sociology](https://journals.sagepub.com/doi/abs/10.1177/004839319802800302)
+
+## Exemplos
+
+### Tendência de termos chave da Sociologia
+
+![](AmericanSociologicalReview_WordFrequency_Class_Gender_Race.png){fig-align="center" width="429"}
+
+[Text Analysis with JSTOR Archives](https://journals.sagepub.com/doi/10.1177/2378023118809264)
+
+## Exemplos
+
+### Coocorrência de palavras
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2020.40.08.png){fig-align="center" width="443"}
+
+## Exemplos
+
+### Mudança de significado de palavras
+
+![](LinguisticChange-Gay.png){fig-align="center" width="463"}
+
+[Statistically Significant Detection of Linguistic Change](https://dl.acm.org/doi/10.1145/2736277.2741627)
+
+## Exemplos
+
+### Categorização e visualização
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2020.40.50.png){fig-align="center" width="456"}
+
+## Exemplos
+
+### Vigilância em saúde baseada em eventos e rumores
+
+![](Piaui-GoogleCovid.jpg){fig-align="center"}
+
+[Piauí](https://piaui.folha.uol.com.br/no-carnaval-buscas-por-sintomas-covid-voltaram-subir-sete-dias-depois-numero-de-novos-casos-bateu-recorde/)
+
+## VBE: EIOS - Ferramenta oficial da OMS
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2021.55.04.png)
+
+<https://www.who.int/initiatives/eios>
+
+## Terminologias importantes
+
+-   **Tokenização:** dividir sequências mais longas
+-   **Corpus ou Corpora:** Uma grande coleção estruturada de textos é conhecida como corpus (plural corpora)
+-   **Stemming:** é um processo para eliminar afixos e obter uma raiz de palavra ou palavra raiz
+-   **Lematização:** Leva em consideração a análise morfológica das palavras
+-   **Stop Words:** palavras com pouco significado e muito frequentes
+
+## Regex (Regular Expressions)
+
+### Nada mais que uma normalização
+
+-   Formatos mais padronizados: expressões regulares, ou "regex"
+-   A normalização de texto e a limpeza dos dados podem tomar a maior parte do tempo em um projeto.
+-   **Algumas pessoas, ao se defrontarem com um problema, pensam "Acho que vou usar expressões regulares". Agora elas tem dois problemas.**
+
+## Parâmetros das Regex
+
+### Âncoras
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2021.24.24.png){fig-align="center" width="457"}
+
+## Parâmetros das Regex
+
+### Operadores
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2021.25.14.png){fig-align="center" width="434"}
+
+## Parâmetros das Regex
+
+### Quantificadores
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2021.25.41.png){fig-align="center" width="422"}
+
+## Pacote stringR
+
+![](logo.png){width="67"}
+
+![](Captura%20de%20Tela%202022-11-26%20%C3%A0s%2021.29.02.png){fig-align="center" width="637"}
+
+## Exemplo no R
+
+```{r, warning=F}
+library(tidyverse)
+banana_vec <- c("banana", "bananas", "bananal", "abanar", "bananeira", "bandolim")
+
+str_detect(banana_vec, "^ban")
+```
+
+\newline
+
+```{r}
+str_extract_all(banana_vec, "^ban.*") |> unlist()
+```
+
+\newline
+
+```{r}
+str_replace(banana_vec, "^ban", "BAN") |> unlist()
+```
+
+## Prática
+
+```{r}
+datasus <- rio::import("https://d26692udehoye.cloudfront.net/SRAG/2019/INFLUD19.csv")
+
+datasus %>% 
+  select(OUT_ANTIV) %>% 
+  filter(OUT_ANTIV!="") %>% 
+  head(50)
+```
+
+## Prática
+
+```{r}
+datasus %>% 
+  mutate(OUT_ANTIV=str_to_lower(OUT_ANTIV)) %>% 
+  filter(str_detect(OUT_ANTIV, "flu"))%>% 
+  select(OUT_ANTIV) %>% 
+  head(50)
+           
+```
+
+# Agora faça você mesmo!
+
+[Exercício](<https://github.com/cmusso86/Aula_Ceub.git>)

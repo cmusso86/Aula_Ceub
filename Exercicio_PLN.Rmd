@@ -1,0 +1,67 @@
+---
+title: "Exercício"
+author: "Carolina Musso"
+date: "`r format(Sys.Date(), '%d de %B, %Y'`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Questão 1
+
+O código abaixo irá instalar (caso não estejam instalados) e carregar os pacotes necessários para este exercício. 
+
+```{r}
+# PACOTES ----
+rm(list=ls())
+if(!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, rio, tm, wordcloud)
+```
+
+As linhas de código abaixo irá realizar o download do banco de dados do opendatasus, e salva-lo como um objeto denominado `dados_datasus`
+
+```{r pacotes}
+dados_datasus <- rio::import("https://d26692udehoye.cloudfront.net/SRAG/2019/INFLUD19.csv")
+```
+
+Utilizando, preferencialmente, as funções do pacote `strigr` (que estão incluídas no pacote tidyverse carregado acima), faça como se pede. 
+
+## a) Filtre o banco apenas para as linhas que contém o uso de azitromicina (informações contina na coluna `OUT_ANTIV`). Lembre-se que este medicamento pode estar escrito de várias formas, tente ser o mais compreensivo possível.
+
+```{r}
+dados_datasus %>% 
+  filter(...)
+```
+
+## b) Agora faça uma seleção semelhante, mas apenas para os casos em que azitromicina foi o primeiro medicamento citado.
+
+```{r}
+
+```
+
+## c) Cria uma nova coluna , chamada USO_DE_ANTIBIÓTICO que conterá a informação "Sim" para as linhas que contém palavras terminando com "cina". Dica: ude a função `ifelse()` ou `case_when()`. 
+
+```{r}
+dados_datasus %>% 
+  mutate(USO_DE_ANTIBIÓTICO= ....)
+```
+
+# Questão 2 - desafio
+
+## a) Partindo do vetor de palavras criado abaixo, tente seguir as intruções do blog que abrirá abaixo para fazer uma nuvem de palavras com as palavras da coluna trabalhada acima. 
+
+```{r}
+browseURL("https://rpubs.com/amrofi/word_cloud_with_R_Mateus")
+```
+
+```{r}
+vetor_de_palavras <- dados_datasus %>% 
+  filter(OUT_ANTIV!=""&!is.na(OUT_ANTIV)) %>% # remove linhas vazias
+  select(OUT_ANTIV) %>% 
+  pull() %>% 
+  str_c(collapse = " ")
+```
+
+
